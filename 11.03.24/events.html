@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+        class App extends React.Component {
+            state = {
+                name: 'Ryu',
+                age: 30,
+                hover_x: 0,
+                hover_y: 0
+            }
+            handleclick = (e) => {
+                console.log(e.target.id);
+                // --this.state.age
+                // console.log(this.state.age);
+                switch (e.target.id) {
+                    case "dec_btn":
+                        this.setState({
+                            age: --this.state.age
+                        })
+                        break;
+                }
+            }
+            handleMouseMove = (e) => {
+                //console.log(e);
+                this.setState({
+                    hover_x: e.clientX,
+                    hover_y: e.clientY,
+                })
+                // for(let f in e) {
+                //     console.log(`${f}: ${e[f]}`);
+                // }
+            }
+            handleCopy = (e) => {
+                console.log('Try to be original for once');
+                e.preventDefault()
+            }
+            handleChange = (e) => {
+                console.log(e.target.value);
+                this.setState({
+                    name: e.target.value
+                        })
+            }
+            render() {
+                return (
+                    <div className="app-content">
+                        <h1>Hello World!!</h1>
+                        <p>My name is: {this.state.name} and I am {this.state.age}</p>
+                        <button onClick={this.handleclick} id="dec_btn">Age - 1</button>
+                        <button onMouseMove={this.handleMouseMove} id="hov_btn">HOVER ME..................</button>
+                        <p>Hovering : {this.state.hover_x}, {this.state.hover_y}</p>
+                        <p onCopy={this.handleCopy}>What we think, we become...</p>
+                        <p>NAME: <input type="text" defaultValue={this.state.name} onChange={this.handleChange}/></p>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(<App />, document.getElementById('app'));
+
+        // for fun
+        const elem = <h1>Hello World!</h1>
+    </script>
+</body>
+
+</html>
