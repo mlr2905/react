@@ -4,10 +4,10 @@ class HelloWolrd extends Component {
     render () {
         return (
             <div>
-                <p>Hello Wolrd</p>
+                <p style={{color :'green'}}>Hello Wolrd</p>
             </div>
         )
     }
 }
 
-export default Car;
+export default HelloWolrd;

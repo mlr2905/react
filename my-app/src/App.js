@@ -1,5 +1,6 @@
 import React,{ Component } from 'react'
-import Car from './components/Car'
+import HelloWolrd from './components/HelloWolrd'
+
 class App extends Component {
   render() {
     // create component called HelloWolrd
@@ -7,8 +8,7 @@ class App extends Component {
     // line #10 <HelloWorld />
     return (
       <div className="App">
-        <HelloWolrd />
-
+        <HelloWolrd/>
       </div>
     );
   }
