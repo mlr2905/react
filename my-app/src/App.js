@@ -7,10 +7,7 @@ class App extends Component {
     // line #10 <HelloWorld />
     return (
       <div className="App">
-        <h1>Hello world!</h1>
-        <Car />
-        <Car />
-        <Car />
+        <HelloWolrd />
 
       </div>
     );
