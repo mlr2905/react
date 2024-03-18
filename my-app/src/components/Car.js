@@ -2,11 +2,15 @@ import React, { Component } from 'react';
 
 class Car extends Component {
     render () {
+        console.log(this.props);
+        //const color = this.props.color
+        const { color, brand, model, year } = this.props
         return (
-            <div>
-                <p>Brand: Honda</p>
-                <p>Model: Civic</p>
-                <p>Color: Black</p>
+            <div style = {{ color }}>
+                <p>Brand: { brand }</p>
+                <p>Model: { model }</p>
+                <p>Color: { color }</p>
+                <p>Year: { year }</p>
             </div>
         )
     }
