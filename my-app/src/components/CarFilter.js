@@ -4,24 +4,22 @@ import React, { Component } from 'react';
 
 class CarFilter extends Component {
     state = {
-        filter_by_year: 0
+        year_filter: 0
     }
     handleChange = (e) => {
-
-        this.setState( {
-
-                filter_by_year: e.target.value
-                 
+        // take the e.target.value and setState
+        this.setState({
+            year_filter: e.target.value
         })
-        this.props.set_Filter(this.state.filter_by_year)
-
+        // call function in App.js and set the filter year
+        this.props.set_filter(e.target.value)
     }
     render() {
         return (
             <div>
                 <h2>filter cars by year (bigger equal than)</h2>
                 <p>Filter: <input name="year" type="number" onChange={this.handleChange}
-                    value={this.state.filter_by_year} placeholder="year" /></p>
+                    value={this.state.year_filter} placeholder="year" /></p>
             </div>
         );
     }
